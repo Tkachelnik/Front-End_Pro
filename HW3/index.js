@@ -36,3 +36,6 @@ if (unit == 'f') {
     C = 'NaN';
 }
 console.log('C = ',C,"; K = ", K,'; F = ', F);
+
+console.log('Ex3');
+
