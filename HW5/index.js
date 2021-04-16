@@ -10,9 +10,7 @@ const filArray = () => {
 }
 
 let arr = filArray();
-// for (var i = 0; i < 1000; i++) {
-//     console.log(arr[i]);
-// }
+console.log(arr);
 
 
 // Ex2
@@ -64,4 +62,3 @@ let student1Courses = ['Math', 'English', 'Programming'];
 let student2Courses = ['Geography', 'Spanish', 'Programming'];
 
 console.log(getSameStrs(student1Courses, student2Courses));
-
