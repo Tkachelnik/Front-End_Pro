@@ -18,6 +18,7 @@ let grandFa = {
 }
 let kolobok = {
     name: 'kolobok',
+    isAlive: true,
     song: [' - I was made of flour', ` - I managed to run away from my ${grandMa.name}`, ` - I managed to run away from my ${grandFa.name}`],
     sing: function () {
         this.song.forEach((line) => {
@@ -68,7 +69,7 @@ function chapter2to4(kolobok, character, speaker, numOfChapter) {
     kolobok.sing();
     speaker.say(`${kolobok.name} runs away from ${character.name}`);
 }
-function chapter5(kolobok, fox) {
+function chapter5(kolobok, fox, speaker) {
     speaker.say('Chapter 5');
     speaker.say(`${kolobok.name} meets ${fox.name}`);
     fox.say(` - I'll eat you, ${kolobok.name}`);
@@ -78,6 +79,7 @@ function chapter5(kolobok, fox) {
     speaker.say(`But ${fox.name} says: `);
     fox.say(` - Sorry, ${kolobok.name}, but I'm very old and don't hear well. So, seat next to me and sing again...`);
     speaker.say(`${kolobok.name} seat next to ${fox.name} and she managed to eat him.`);
+    kolobok.isAlive = false;
     speaker.say('The end');
 }
 function story() {
