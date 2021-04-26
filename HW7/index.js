@@ -1,32 +1,34 @@
 let button = document.getElementById("sendBtn");
-//let index = 0;
-let msgArea = document.getElementById("msgArea");
 let input = document.getElementById("inputArea");
+let index = 0;
 function msgAdding() {
-    // if (index == 15) {
-    //     let temp = msgArea.getElementsByTagName('div')[0];
-    //     temp.remove();
-    //     index--;
-    // }
+    let msgArea = document.getElementById("msgArea");   
+    index++;
     let userMessage = input.value;
     input.value = "";
     button.setAttribute('disabled', 'disabled');
     let messageDiv = document.createElement('div');
+    messageDiv.setAttribute('class', 'msg');
+    messageDiv.setAttribute('id', 'msg' + index);
     messageDiv.prepend(userMessage);
     msgArea.appendChild(messageDiv);
-    messageDiv.scrollIntoView({  block: 'end'});
+    messageDiv.scrollIntoView({ block: 'end' });
     input.focus();
-   // index++;
 }
-button.addEventListener('click', msgAdding);
 
 input.addEventListener('input', updateValue);
+document.addEventListener('keydown', function (event) {
+    if (button.getAttribute('disabled') === null && event.code == 'Enter') {
+        msgAdding();
+    }
+});
+button.addEventListener('click', msgAdding);
 
 function updateValue(e) {
-    if(e.target.value){
+    if ((e.target.value.trim()) !== "") {
         button.removeAttribute('disabled');
     }
-    else{
+    else {
         button.setAttribute('disabled', 'disabled');
     }
 }
