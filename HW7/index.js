@@ -2,7 +2,7 @@ let button = document.getElementById("sendBtn");
 let input = document.getElementById("inputArea");
 let index = 0;
 function msgAdding() {
-    let msgArea = document.getElementById("msgArea");   
+    let msgArea = document.getElementById("msgArea");
     index++;
     let userMessage = input.value;
     input.value = "";
@@ -17,7 +17,7 @@ function msgAdding() {
 }
 
 input.addEventListener('input', updateValue);
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keydown', (event) => {
     if (button.getAttribute('disabled') === null && event.code == 'Enter') {
         msgAdding();
     }
