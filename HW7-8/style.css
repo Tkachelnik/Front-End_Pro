@@ -1,4 +1,4 @@
-#msgArea > div > img {
+#msgArea>div>img {
     margin-left: 0px;
     margin-right: 3px;
     float: left;
@@ -6,61 +6,73 @@
     overflow: auto;
     border-radius: 45px;
 }
-#msgArea > div > p {
+
+#msgArea>div>p {
     padding: 0px 15px 0px 5px;
-    background-color:rgb(73, 73, 73);
+    background-color: rgb(73, 73, 73);
     overflow: auto;
     border: 2px solid white;
     border-radius: 20px 15px 20px 5px;
     width: fit-content;
 }
-#msgArea > div.spam > p {
-    background-color:rgb(112, 112, 112);
+
+#msgArea>div.spam>p {
+    background-color: rgb(112, 112, 112);
 }
-#msgArea > div {
-     background-color: rgb(46, 45, 45);
+
+#msgArea>div {
+    background-color: rgb(46, 45, 45);
     color: white;
-    width:100%;
+    width: 100%;
     height: fit-content;
     font-size: 20px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 0px 15px 0px 5px;
     margin-left: 0px;
 }
 
-#inputArea{
-    background-color:rgb(73, 73, 73);
+#inputArea {
+    background-color: rgb(73, 73, 73);
     color: white;
     border: 2px solid whitesmoke;
     float: left;
-     width: 95%; 
-     margin-bottom: 4px;
-}
-#msgArea{
-    overflow: auto;
-     height: 584px;
-}
-#sendBtn{
-    width: 5%;
-    background-color:white;
+    width: 95%;
     margin-bottom: 4px;
 }
-body{
+
+#msgArea {
+    overflow: auto;
+    height: 584px;
+    overflow-x: hidden;
+}
+
+#sendBtn {
+    width: 5%;
+    background-color: white;
+    margin-bottom: 4px;
+}
+
+body {
     background-color: beige;
 }
-.foneColor{
+
+.foneColor {
     background-color: rgb(46, 45, 45);
 }
+
 .send-img {
     width: 100%;
     height: 100%;
 }
+
 .empty-space {
     height: 15px;
 }
+
 .checkbox-space {
     height: 45px;
 }
+
 .checkbox-block {
     padding: 3px;
     width: fit-content;
@@ -68,4 +80,3 @@ body{
     border-radius: 8px;
     color: white;
 }
- 
