@@ -1,12 +1,20 @@
 let button = document.getElementById("sendBtn");
 let input = document.getElementById("inputArea");
+let checkbox2 = document.getElementById('checkbox2');
 let index = 0;
 let spamIndex = 0;
 
-window.onload = () => {
-    let timerSpam = setInterval(spamFunc, 10000);
-}
+let timerSpam = setSpamBot();
 
+checkbox2.addEventListener('change', () => {
+    if (checkbox2.checked) {
+        console.log(checkbox2.checked);
+        clearInterval(timerSpam);
+    }
+    else {
+        timerSpam = setSpamBot();
+    }
+})
 button.addEventListener('click', msgAdding);
 input.addEventListener('input', updateValue);
 document.addEventListener('keydown', (event) => {
@@ -15,6 +23,9 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+function setSpamBot() {
+    return setInterval(spamFunc, 10000);
+}
 function spamFunc() {
     let spamPhrases = ['Nice to meet you in my messanger', 'Do you want a premium account?', 'Do you like the messanger? Leave a review!', 'Check if somebody write you!', 'Do not forget to have a break!'];
     spamIndex++;
@@ -50,7 +61,7 @@ function msgAdding() {
     index++;
 
     let msgArea = document.getElementById("msgArea");
-    let checkbox = document.getElementById('checkbox');
+    let checkbox = document.getElementById('checkbox1');
     let userMessage = input.value;
     input.value = "";
 
