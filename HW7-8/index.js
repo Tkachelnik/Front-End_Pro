@@ -1,26 +1,26 @@
-let button = document.getElementById("sendBtn");
-let input = document.getElementById("inputArea");
-let index = 0;
-let spamIndex = 0;
+function startChat() {
+    let button = document.getElementById("sendBtn");
+    let input = document.getElementById("inputArea");
+    //let checkbox2 = document.getElementById('checkbox2');  ??????/////////////////////////////////
 
-let timerSpam = setSpamBot();
+    let timerSpam = setSpamBot();
 
-checkbox2.addEventListener('change', () => {
-    if (checkbox2.checked) {
-        clearInterval(timerSpam);
-    }
-    else {
-        timerSpam = setSpamBot();
-    }
-})
-button.addEventListener('click', msgAdding);
-input.addEventListener('input', updateValue);
-document.addEventListener('keydown', (event) => {
-    if (button.getAttribute('disabled') === null && event.code ===   'Enter') {
-        msgAdding();
-    }
-});
-
+    checkbox2.addEventListener('change', () => {
+        if (checkbox2.checked) {
+            clearInterval(timerSpam);
+        }
+        else {
+            timerSpam = setSpamBot();
+        }
+    })
+    button.addEventListener('click', msgAdding);
+    input.addEventListener('input', updateValue);
+    document.addEventListener('keydown', (event) => {
+        if (button.getAttribute('disabled') === null && event.code === 'Enter') {
+            msgAdding();
+        }
+    });
+}
 
 function createMsg(msgContent) {
     let msgArea = document.getElementById("msgArea");
@@ -46,6 +46,10 @@ function createMsg(msgContent) {
 }
 
 function spamFunc() {
+    let spamIndex;
+    if(spamIndex === undefined) {
+        spamIndex = 0
+    }
     let spamPhrases = ['Nice to meet you in my messanger', 'Do you want a premium account?', 'Do you like the messanger? Leave a review!', 'Check if somebody write you!', 'Do not forget to have a break!'];
     spamIndex++;
     let randNum = randomInteger(0, 4);
@@ -61,9 +65,14 @@ function spamFunc() {
 }
 
 function msgAdding() {
+    let index;
+    if(index === undefined) {
+        index = 0;
+    }
     index++;
+    let button = document.getElementById("sendBtn");
+    let input = document.getElementById("inputArea");
 
-    let checkbox2 = document.getElementById('checkbox2');
     let checkbox = document.getElementById('checkbox1');
     let userMessage = input.value;
     input.value = "";
@@ -88,10 +97,11 @@ function msgAdding() {
 }
 
 function setSpamBot() {
-    return setInterval(spamFunc, 10000);
+    return setInterval(spamFunc, 1000);
 }
 
 function updateValue(e) {
+    let button = document.getElementById("sendBtn");
     if ((e.target.value.trim()) !== "") {
         button.removeAttribute('disabled');
     }
@@ -104,3 +114,7 @@ function randomInteger(min, max) {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
 }
+
+
+
+startChat();
