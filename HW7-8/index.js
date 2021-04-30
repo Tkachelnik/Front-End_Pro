@@ -1,6 +1,5 @@
 let button = document.getElementById("sendBtn");
 let input = document.getElementById("inputArea");
-let checkbox2 = document.getElementById('checkbox2');
 let index = 0;
 let spamIndex = 0;
 
@@ -8,7 +7,6 @@ let timerSpam = setSpamBot();
 
 checkbox2.addEventListener('change', () => {
     if (checkbox2.checked) {
-        console.log(checkbox2.checked);
         clearInterval(timerSpam);
     }
     else {
@@ -18,37 +16,81 @@ checkbox2.addEventListener('change', () => {
 button.addEventListener('click', msgAdding);
 input.addEventListener('input', updateValue);
 document.addEventListener('keydown', (event) => {
-    if (button.getAttribute('disabled') === null && event.code == 'Enter') {
+    if (button.getAttribute('disabled') === null && event.code ===   'Enter') {
         msgAdding();
     }
 });
 
-function setSpamBot() {
-    return setInterval(spamFunc, 10000);
-}
-function spamFunc() {
-    let spamPhrases = ['Nice to meet you in my messanger', 'Do you want a premium account?', 'Do you like the messanger? Leave a review!', 'Check if somebody write you!', 'Do not forget to have a break!'];
-    spamIndex++;
 
+function createMsg(msgContent) {
     let msgArea = document.getElementById("msgArea");
 
     let imgAva = document.createElement('img');
-    let spamP = document.createElement('p');
-    let spamDiv = document.createElement('div');
+    let elemP = document.createElement('p');
+    let elemDiv = document.createElement('div');
+
+    msgContent.imgAttributes.forEach(function (value, key) {
+        imgAva.setAttribute(`${key}`, `${value}`);
+    });
+    msgContent.divAttributes.forEach(function (value, key) {
+        elemDiv.setAttribute(`${key}`, `${value}`);
+    });
+
+    elemP.append(msgContent.text);
+    elemDiv.append(imgAva);
+    elemDiv.append(elemP);
+    msgArea.appendChild(elemDiv);
+
+    elemDiv.scrollIntoView({ block: 'end' });
+    return elemDiv;
+}
+
+function spamFunc() {
+    let spamPhrases = ['Nice to meet you in my messanger', 'Do you want a premium account?', 'Do you like the messanger? Leave a review!', 'Check if somebody write you!', 'Do not forget to have a break!'];
+    spamIndex++;
     let randNum = randomInteger(0, 4);
     let spamMsg = spamPhrases[randNum];
 
-    imgAva.setAttribute('src', 'images/spam.jfif');
-    spamDiv.setAttribute('class', 'spam');
-    spamDiv.setAttribute('id', 'spam' + spamIndex);
+    let msgContent = {
+        text: spamMsg,
+        imgAttributes: new Map([['src', 'images/spam.jfif']]),
+        divAttributes: new Map([['class', 'spam'], ['id', 'spam' + spamIndex]]),
+    }
 
-    spamP.append(spamMsg);
-    spamDiv.append(imgAva);
-    spamDiv.append(spamP);
-    msgArea.appendChild(spamDiv);
-
-    spamDiv.scrollIntoView({ block: 'end' });
+    createMsg(msgContent);
 }
+
+function msgAdding() {
+    index++;
+
+    let checkbox2 = document.getElementById('checkbox2');
+    let checkbox = document.getElementById('checkbox1');
+    let userMessage = input.value;
+    input.value = "";
+
+    button.setAttribute('disabled', 'disabled');
+
+    let msgContent = {
+        text: userMessage,
+        imgAttributes: new Map([['src', 'images/user1.jfif']]),
+        divAttributes: new Map([['class', 'msg'], ['id', 'msg' + index]]),
+    }
+
+    let messageDiv = createMsg(msgContent);
+    if (checkbox.checked) {
+        let timerDel = setTimeout(() => {
+            let delElem = messageDiv;
+            delElem.remove();
+        }, 5000)
+        checkbox.checked = false;
+    }
+    input.focus();
+}
+
+function setSpamBot() {
+    return setInterval(spamFunc, 10000);
+}
+
 function updateValue(e) {
     if ((e.target.value.trim()) !== "") {
         button.removeAttribute('disabled');
@@ -57,39 +99,7 @@ function updateValue(e) {
         button.setAttribute('disabled', 'disabled');
     }
 }
-function msgAdding() {
-    index++;
 
-    let msgArea = document.getElementById("msgArea");
-    let checkbox = document.getElementById('checkbox1');
-    let userMessage = input.value;
-    input.value = "";
-
-    let imgAva = document.createElement('img');
-    let messageDiv = document.createElement('div');
-    let messageP = document.createElement('p');
-
-    imgAva.setAttribute('src', 'images/user1.jfif');
-    button.setAttribute('disabled', 'disabled');
-    messageDiv.setAttribute('class', 'msg');
-    messageDiv.setAttribute('id', 'msg' + index);
-
-    messageP.append(userMessage);
-    messageDiv.append(imgAva);
-    messageDiv.append(messageP);
-    msgArea.appendChild(messageDiv);
-
-    if (checkbox.checked) {
-        let timerDel = setTimeout(() => {
-            let delElem = messageDiv;
-            delElem.remove();
-        }, 5000)
-        checkbox.checked = false;
-    }
-
-    messageDiv.scrollIntoView({ block: 'end' });
-    input.focus();
-}
 function randomInteger(min, max) {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
