@@ -1,7 +1,7 @@
 function startChat() {
     let button = document.getElementById("sendBtn");
     let input = document.getElementById("inputArea");
-    //let checkbox2 = document.getElementById('checkbox2');  ??????/////////////////////////////////
+    //let checkbox2 = document.getElementById('checkbox2');
 
     let timerSpam = setSpamBot();
 
@@ -46,12 +46,10 @@ function createMsg(msgContent) {
 }
 
 function spamFunc() {
-    let spamIndex;
-    if(spamIndex === undefined) {
-        spamIndex = 0
-    }
-    let spamPhrases = ['Nice to meet you in my messanger', 'Do you want a premium account?', 'Do you like the messanger? Leave a review!', 'Check if somebody write you!', 'Do not forget to have a break!'];
-    spamIndex++;
+    let spamIndex = new Date().getTime();
+
+    let spamPhrases = ['Nice to meet you in my messanger', 'Do you want a premium account?', 
+                       'Do you like the messanger? Leave a review!', 'Check if somebody write you!', 'Do not forget to have a break!'];
     let randNum = randomInteger(0, 4);
     let spamMsg = spamPhrases[randNum];
 
@@ -65,11 +63,7 @@ function spamFunc() {
 }
 
 function msgAdding() {
-    let index;
-    if(index === undefined) {
-        index = 0;
-    }
-    index++;
+    let index = new Date().getTime();
     let button = document.getElementById("sendBtn");
     let input = document.getElementById("inputArea");
 
@@ -97,7 +91,7 @@ function msgAdding() {
 }
 
 function setSpamBot() {
-    return setInterval(spamFunc, 1000);
+    return setInterval(spamFunc, 10000);
 }
 
 function updateValue(e) {
