@@ -61,11 +61,21 @@ function chapter5(kolobok, fox, speaker) {
         .then(() => {
             kolobok.song.push(` - I managed to run away from ${fox.name}`);
             kolobok.sing();
-            speaker.say(`But ${fox.name} says: `);
-            fox.say(` - Sorry, ${kolobok.name}, but I'm very old and don't hear well. So, seat next to me and sing again...`);
-            speaker.say(`${kolobok.name} seat next to ${fox.name} and she managed to eat him.`);
-            kolobok.isAlive = false;
-            speaker.say('The end');
+            return kolobok.name;
+        })
+        .then((name) => {
+            new Promise((resolve1, reject1) => {
+                setTimeout(() => {
+                    resolve1();
+                }, 3000);
+            })
+                .then(() => {
+                    speaker.say(`But ${fox.name} thinks for some seconds and says: `);
+                    fox.say(` - Sorry, ${name}, but I'm very old and don't hear well. So, seat next to me and sing again...`);
+                    speaker.say(`${name} seat next to ${fox.name} and she managed to eat him.`);
+                    kolobok.isAlive = false;
+                    speaker.say('The end');
+                });
         })
         .catch(() => {
             speaker.say('Fox do not listen to kolobok and eat him');
