@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd, ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+@font-face {
+     
+    font-family: 'Caveat';
+    src: url('fonts/caveat-regular.ttf');
+}
+
+body {
+    background-color: #283344;
+}
+
+header {
+    background-color: #4fc74d;
+}
+
+.icon-img {
+    float: left;
+    height: 100%;
+    padding: 7px;
+    margin: 0%;
+}
+
+.header-div {
+    height: 80px;
+    line-height: 80px;
+    font-weight: 900;
+    font-size: 25px;
+    font-family: system-ui;
+}
+
+#taskArea {
+    height: 750px;
+    background-color: #a6f16c;
+    padding-top: 8px;
+    overflow: auto;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: Caveat;
+}
+
+.input-div {
+    background-color: #4fc74d;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    height: 58px;
+}
+
+#taskArea>div {
+    float: left;
+    height: fit-content;
+    padding: 25px 45px;
+    padding-left: 30px;
+    margin: 20px 25px;
+    border: 5px solid #844444;
+    border-radius: 12px;
+    width: fit-content;
+    background-color: wheat;
+}
+
+.add-task-img {
+    width: 100%;
+    height: 100%;
+}
+
+.input-div>button {
+    width: 5%;
+    margin-left: 5px;
+    background-color: white;
+}
+
+.m-r-4px {
+    margin-right: 4px;
+}

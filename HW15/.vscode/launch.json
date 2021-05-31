@@ -8,7 +8,7 @@
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "d:\\Курсы Hillel Front-End Pro\\Front-End_Pro\\HW7-8\\index.html"
+            "file": "d:\\Курсы Hillel Front-End Pro\\Front-End_Pro\\HW15\\index.html"
         }
     ]
 }
