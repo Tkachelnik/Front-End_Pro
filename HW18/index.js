@@ -1,4 +1,3 @@
-
 class Program {
     button1 = document.getElementById('requestBtn1');
     button2 = document.getElementById('requestBtn2');
@@ -60,23 +59,14 @@ class Program {
             soulutionArea.innerHTML = '';
         })
     }
-    request(requestOptions) {
-        return new Promise((resolve, reject) => {
-            let xhr = new XMLHttpRequest();
-            xhr.open(requestOptions.method, requestOptions.url);
-    
-            xhr.responseType = requestOptions.responseType;
-            xhr.onload = () => {
-                resolve(xhr.response);
-            }
-            xhr.setRequestHeader('Content-Type', 'application/json');
-    
-            xhr.onerror = () => {
-                reject();
-            }
-    
-            xhr.send();
+    async request(requestOptions) {
+        let responce = await fetch(requestOptions.url, {
+            method: requestOptions.method,
+            headers: {
+                'Content-Type':  'application/json'
+            },
         })
+        return await responce.json();
     }
     createDiv(elem) {
         let soulutionArea = document.getElementById('soulutionArea');
