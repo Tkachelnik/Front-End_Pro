@@ -1,0 +1,92 @@
+#show-div {
+    padding: 10px;
+    float: left;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    /* display: inline-block; */
+}
+
+.coin {
+    background-color: khaki;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+    border-radius: 47px;
+    border: 1px solid black;
+    /* text-align: center; */
+    animation: coin 1s 1;
+}
+
+#counter {
+    text-align: center;
+    font-size: 60px;
+    /* padding: 5px; */
+    /* display: inline-block; */
+    margin-left: 140px;
+    margin-bottom: 70px;
+    width: 60px;
+    height: fit-content;
+    border: 2px solid black;
+}
+
+.shell {
+    padding: 20px;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.container {
+    margin: 2% 20%;
+}
+
+@keyframes coin {
+    0% {
+        width: inherit;
+        font-size: 20px;
+        margin-left: 0px;
+    }
+    10% {
+        width: 0px;
+        font-size: 0px;
+        margin-left: 50px;
+    }
+    20% {
+        width: inherit;
+        font-size: 20px;
+        margin-left: 0px;
+    }
+    30% {
+        width: 0px;
+        font-size: 0px;
+        margin-left: 50px;
+    }
+    40% {
+        width: inherit;
+        font-size: 20px;
+        margin-left: 0px;
+    }
+    50% {
+        width: 0px;
+        font-size: 0px;
+        margin-left: 50px;
+    }
+    60% {
+        width: inherit;
+        font-size: 20px;
+        margin-left: 0px;
+    }
+    80% {
+        width: 0px;
+        font-size: 0px;
+        margin-left: 50px;
+    }
+    100% {
+        width: inherit;
+        font-size: 20px;
+        margin-left: 0px;
+    }
+}

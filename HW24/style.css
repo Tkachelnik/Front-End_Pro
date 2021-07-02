@@ -1,0 +1,26 @@
+body {
+    background-color: #fcfcfc;
+}
+
+#cart {
+  height: 50px;
+}
+#cartImg {
+    left: 0;
+    top: 0;
+    position: relative;
+    height:40px;
+    z-index: 0;
+}
+#counter {
+    position: relative;
+    left: -5px;
+    top: -17px;
+    font-size: 15px;
+    z-index: 1;
+    padding: 0px 7px;
+    width:fit-content;
+    border-radius: 60px;
+    background-color: yellow;
+    border: 0px solid black;
+}

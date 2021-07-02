@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">CarShop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active">Товары</a>
+                        </li>
+                    </ul>
+                    <div id="cart" class="me-2">
+                        <img src="https://image.flaticon.com/icons/png/128/879/879815.png" id="cartImg">
+                        <div id="counter"> 0</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5 main">
+        <h1>Все товары</h1>
+        <div class="row mt-5 mb-2">
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="./images/mersedes.jpg"/>
+                <h2>Mersedes</h2>
+                <p>Цена: 50000$</p>
+                <p><a class="btn btn-warning add-to-cart">Добавить в корзину</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="./images/fiesta.jpg"/>
+                <h2>Ford Fiesta</h2>
+                <p>Цена: 20000$</p>
+                <p><a class="btn btn-warning add-to-cart">Добавить в корзину</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="./images/m3.jpg"/>
+                <h2>BMW M3</h2>
+                <p>Цена: 90000$</p>
+                <p><a class="btn btn-warning add-to-cart">Добавить в корзину</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="./images/nissan.jpg"/>
+                <h2>Nissan Leaf</h2>
+                <p>Цена: 30000$</p>
+                <p><a class="btn btn-warning add-to-cart ">Добавить в корзину</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="./images/tesla.jpg"/>
+                <h2>Tesla Model S</h2>
+                <p>Цена: 80000$</p>
+                <p><a class="btn btn-warning add-to-cart">Добавить в корзину</a></p>
+            </div>
+        </div>
+    </div>
+    <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>© 2021 Все права защищены · <a href="#">Соглашение</a></p>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+</html>

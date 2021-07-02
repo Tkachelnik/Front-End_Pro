@@ -1,0 +1,44 @@
+input {
+    font-size: large;
+    margin-top: 20px;
+    margin-left: 5PX;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+div {
+    font-size: large;
+    font-weight: bold;
+}
+
+textarea {
+    margin-top: 20px;
+    margin-left: 5PX;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+.local-storage-2 {
+    border: 4px solid black;
+    border-radius: 6px;
+    width: fit-content;
+    padding: 10px;
+}
+
+#btn {
+    font-size: large;
+    font-weight: bold;
+    padding: 5px 15px;
+}
+#btnDown {
+    margin-left: 93px;
+}
+
+#num-of-version {
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    border: 2px solid black;
+    border-radius: 6px;
+}
