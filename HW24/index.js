@@ -29,7 +29,7 @@ main.addEventListener('click',async (e) => {
         if(response.ok) {          
             let data = await response.json();
             console.log(data);
-            counter.innerHTML = 3;
+            counter.innerHTML = data;
         }
         console.log('endListener');
     } else {
