@@ -1,0 +1,9 @@
+button{
+    border: 1px solid black;
+    background-color: burlywood;
+    height: fit-content;
+    width: fit-content;
+}
+#show-all-btn {
+    margin-bottom: 10px;
+}

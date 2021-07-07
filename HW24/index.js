@@ -25,12 +25,11 @@ main.addEventListener('click',async (e) => {
             body: JSON.stringify(counter.innerHTML),
             method: 'POST'
         })
-        console.log(response);
-        if(response.ok) {          
+        console.log(response);         
             let data = await response.json();
             console.log(data);
             counter.innerHTML = data;
-        }
+        
         console.log('endListener');
     } else {
         alert('Not found');

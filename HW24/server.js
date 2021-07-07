@@ -15,7 +15,7 @@ const server = http.createServer(function (req, res) {
         console.log('data: ', data);
     });
 
-    req.on('end', async () => {
+    req.on('end', () => {
         data = JSON.parse(data);
         console.log(data);
         data = +data + 1;
